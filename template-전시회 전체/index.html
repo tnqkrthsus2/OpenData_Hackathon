@@ -69,6 +69,31 @@
         </header>
 
 
+        <script>
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyAB5gkVIjXpzadcHQvQwkoMegV6W4hoo98",
+            authDomain: "hackerton-51cc7.firebaseapp.com",
+            databaseURL: "https://hackerton-51cc7-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "hackerton-51cc7",
+            storageBucket: "hackerton-51cc7.appspot.com",
+            messagingSenderId: "4034364430",
+            appId: "1:4034364430:web:1cb0da33046bfb3a6b685f",
+            measurementId: "G-6C6SPZWTMP"
+            };
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <script>
+            const db=firebase.firestore()
+            db.collection('서울시립미술관 전시 현황').get().then((결과)=>{
+                결과.forEach((doc)=>{
+                    console.log(doc.data())
+                })
+            })
+        </script>
+
+
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
