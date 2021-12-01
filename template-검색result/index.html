@@ -53,14 +53,22 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="row">
                 <div class="col">
-                    <input class="form-control form-control-lg" id="emailAddress" placeholder="검색어를 입력해주세요"
+                    <input class="form-control form-control-lg" id="serch_word" placeholder="검색어를 입력해주세요"
                         data-sb-validations="required,email" size=5 />
                 </div>
 
                 <div class="col-auto">
-                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">
+                    <button class="btn btn-primary btn-lg" id="submitButton" onclick="reDirection()">
                         검색
                     </button>
+
+                    <script>
+                        function reDirection() {
+                            debugger;
+                            var input = document.getElementById('serch_word').value;
+                            location.href = "http://127.0.0.1:5500/template-검색result/index.html?keyword=" + input;
+                        }
+                    </script>
                 </div>
             </div>
             <div>
@@ -104,19 +112,23 @@
         };
         firebase.initializeApp(firebaseConfig);
     </script>
-    
+
     <script>
+        
         const db = firebase.firestore();
-        db.collection('exhibition').get().then((결과) => {
-            결과.forEach((doc) => {
-                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().제목+'</h5><h6 id="place">'+doc.data().전시실+'</h6><h7 id="time">'+doc.data().기간+'</h7></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
-            })
-        });
-    </script>
-    <script>
-        var search_word = parse_query_string(window.location.search.substring(1));
+
+        var search_word = parse_query_string(window.location.search.substring(1)).keyword;
         console.log('test');
         console.log(search_word);
+
+        db.collection('test1').where('작품명','==',search_word).get().then((결과) => {
+            console.log('결과');
+            결과.forEach((dic)=>console.log(dic.data()))
+            결과.forEach((doc) => {
+                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+            })
+        });
+
 
         function parse_query_string(query) {
             var vars = query.split("&");
@@ -140,6 +152,7 @@
             return query_string;
         }
     </script>
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
