@@ -125,9 +125,14 @@
             console.log('결과');
             결과.forEach((dic)=>console.log(dic.data()))
             결과.forEach((doc) => {
-                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
             })
         });
+
+        function reDirectionPage() {
+            debugger;
+            location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + search_word;
+        }
 
 
         function parse_query_string(query) {
