@@ -115,14 +115,14 @@
             firebase.initializeApp(firebaseConfig);
         </script>
         <script>
-            var search_word = parse_query_string(window.location.search.substring(1)).keyword;
+            var exact_word = parse_query_string(window.location.search.substring(1)).keyword;
             var painter = parse_query_string(window.location.search.substring(1)).painter;
             console.log('test');
-            console.log(search_word);
+            console.log(exact_word);
             console.log(painter);
 
             const db = firebase.firestore();
-            db.collection('painting').where('작품명','==',search_word).get().then((결과) => {
+            db.collection('painting').where('작품명','==',exact_word).get().then((결과) => {
                 
                 결과.forEach((doc) => {
                     if(doc.data().작가명 == painter){

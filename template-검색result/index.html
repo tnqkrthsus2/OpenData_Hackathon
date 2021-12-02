@@ -130,9 +130,10 @@
         });
 
         function reDirectionPage() {
+            var exact_word = document.getElementById("name").innerHTML;
             var painter = document.getElementById("place").innerHTML;
             console.log(painter);
-            location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + search_word + "&painter=" + painter;
+            location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + exact_word + "&painter=" + painter;
         }
 
 
