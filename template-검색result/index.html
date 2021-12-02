@@ -121,7 +121,7 @@
         console.log('test');
         console.log(search_word);
 
-        db.collection('test1').where('작품명','==',search_word).get().then((결과) => {
+        db.collection('test1').where('작품명','>=',search_word).where('작품명','<=',search_word + '\uf8ff').get().then((결과) => {
             console.log('결과');
             결과.forEach((dic)=>console.log(dic.data()))
             결과.forEach((doc) => {
