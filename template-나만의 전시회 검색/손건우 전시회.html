@@ -1,185 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Blog Home - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jquery링크 추가하기 -->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a href="../template-home/HomePage.html">
-                    <img src="assets/img/mainlogo.png" height="100" width="200" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page header with logo and tagline-->
-        <header class="py-5 bg-light border-bottom mb-4">
-            <div class="container">
-                <div class="text-center my-5">
-                    <h1 class="fw-bolder">관리자님의 전시회에 오신걸 환영합니다!</h1>
-                </div>
-            </div>
-        </header>
-        <!-- Page content-->
-        <div class="container">
-            <div class="row">
-                <!-- Blog entries-->
-                <div class="col-lg-8">
-                    <!-- Featured blog post-->
-                    <div class="card mb-4">
-                        <a id="pic">
-                            <img id="pic" class="card-img-top" src="../imgs/연필끝에 핀 꽃/새 - 꽃.jfif" alt="..." />
-                        </a>
-                        <div class="card-body">
-                            <div class="small text-muted">January 1, 2021</div>
-                            <h2 class="card-title">관리자의 전시회</h2>
-                            <p class="card-text">Diractar : 관리자 </p>
-                            <p class="card-text" style="display: inline">Tag:</p>
-                            <p style="display: inline">#달리</p>
-                            <p style="display: inline">#반</p>
-                            <p style="display: inline">#피카소</p>
-                        </div>
-                    </div>
-                    <!-- Nested row for non-featured blog posts-->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div id="parent1">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="parent2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                    <!-- Search widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Categories widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Tags</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">JavaScript</a></li>
-                                        <li><a href="#!">CSS</a></li>
-                                        <li><a href="#!">Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Side widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Comments</div>
-                        <div class="card-body">
-                            <i class="glyphicon glyphicon-user" style="font-size:24px;"></i>
-                            손건우: 너무 이뻐용
-                        </div>
 
-                        <div class="card-body">
-                            <i class="glyphicon glyphicon-user" style="font-size:24px;"></i>
-                            김소영: 퍼가용
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Blog Home - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jquery링크 추가하기 -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a href="../template-home/HomePage.html">
+                <img src="assets/img/mainlogo.png" height="100" width="200" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">관리자님의 전시회에 오신걸 환영합니다!</h1>
+            </div>
+        </div>
+    </header>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-8">
+                <!-- Featured blog post-->
+                <div class="card mb-4">
+                    <a id="pic">
+                        <img id="pic" class="card-img-top" src="../imgs/연필끝에 핀 꽃/새 - 꽃.jfif" alt="..." />
+                    </a>
+                    <div class="card-body">
+                        <div class="small text-muted">January 1, 2021</div>
+                        <h2 class="card-title">관리자의 전시회</h2>
+                        <p class="card-text">Diractar : 관리자 </p>
+                        <p class="card-text" style="display: inline">Tag:</p>
+                        <p style="display: inline">#달리</p>
+                        <p style="display: inline">#반</p>
+                        <p style="display: inline">#피카소</p>
+                    </div>
+                </div>
+                <!-- Nested row for non-featured blog posts-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="parent1">
                         </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="parent2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter search term..."
+                                aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Tags</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">Web Design</a></li>
+                                    <li><a href="#!">HTML</a></li>
+                                    <li><a href="#!">Freebies</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">JavaScript</a></li>
+                                    <li><a href="#!">CSS</a></li>
+                                    <li><a href="#!">Tutorials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Comments</div>
+                    <div class="card-body">
+                        <i class="glyphicon glyphicon-user" style="font-size:24px;"></i>
+                        손건우: 너무 이뻐용
+                    </div>
+
+                    <div class="card-body">
+                        <i class="glyphicon glyphicon-user" style="font-size:24px;"></i>
+                        김소영: 퍼가용
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">
-                    Copyright &copy; Art Work 2021
-                </p>
-                <p class="m-0 text-center text-white">
-                    Art Work : 신동준 손건우 김소영
-                </p>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-        <script>
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var firebaseConfig = {
-                apiKey: "AIzaSyB3fkGkJ_AFSUTDkIvslynjHSYHqRszibQ",
-                authDomain: "artwork-5634a.firebaseapp.com",
-                databaseURL: "https://artwork-5634a-default-rtdb.asia-southeast1.firebasedatabase.app",
-                projectId: "artwork-5634a",
-                storageBucket: "artwork-5634a.appspot.com",
-                messagingSenderId: "219664019648",
-                appId: "1:219664019648:web:70c162ce73f36d9913fd25",
-                measurementId: "G-1PND35QWHY"
-            };
-            firebase.initializeApp(firebaseConfig);
-        </script>
-        <script>
-            const db = firebase.firestore();
-            var flag=1
-            db.collection('손건우의 전시회').get().then((결과) => {
+    </div>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">
+                Copyright &copy; Art Work 2021
+            </p>
+            <p class="m-0 text-center text-white">
+                Art Work : 신동준 손건우 김소영
+            </p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3fkGkJ_AFSUTDkIvslynjHSYHqRszibQ",
+            authDomain: "artwork-5634a.firebaseapp.com",
+            databaseURL: "https://artwork-5634a-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "artwork-5634a",
+            storageBucket: "artwork-5634a.appspot.com",
+            messagingSenderId: "219664019648",
+            appId: "1:219664019648:web:70c162ce73f36d9913fd25",
+            measurementId: "G-1PND35QWHY"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        const db = firebase.firestore();
+        var flag = 1
+        db.collection('손건우의 전시회').get().then((결과) => {
+            결과.forEach((doc) => {
+                if (flag % 2 == 0)
+                    $("#parent2").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="' + doc.data().메인이미지 + '" alt="..."/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">' + doc.data().작품명 + '</h5><h6 id="place">' + doc.data().작가명 + '</h6><a style="border: solid 1px;" class="btn btn-outline-dark mt-auto" onclick="remove();">Delete</a></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+                else
+                    $("#parent1").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="' + doc.data().메인이미지 + '" alt="..."/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">' + doc.data().작품명 + '</h5><h6 id="place">' + doc.data().작가명 + '</h6><a style="border: solid 1px;" class="btn btn-outline-dark mt-auto" onclick="remove();">Delete</a></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+                
+                flag = flag + 1
+                console.log(flag)
+            })
+        });
+        function reDirectionPage() {
+            var exact_word = document.getElementById("name").innerHTML;
+            var painter = document.getElementById("place").innerHTML;
+            location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + exact_word + "&painter=" + painter;
+        }
+        function remove() {
+            var exact_word = document.getElementById("name").innerHTML;
+            var painter = document.getElementById("place").innerHTML;
+            db.collection('손건우의 전시회').where('작품명','==',exact_word).get().then((결과) => {
                 결과.forEach((doc) => {
-                    if(flag % 2 == 0)
-                        $("#parent2").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..."/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
-                    else
-                        $("#parent1").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..."/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
-                    
-                    flag=flag+1
-                    console.log(flag)
+                    if(doc.data().작가명 ==  painter)
+                    db.collection('손건우의 전시회').doc(doc.id).delete();
                 })
-            });
-        </script>
-    </body>
+            })
+            
+            alert("Delete Success!\n새로고침 후 결과가 반영됩니다.");
+        }
+    </script>
+</body>
+
 </html>
