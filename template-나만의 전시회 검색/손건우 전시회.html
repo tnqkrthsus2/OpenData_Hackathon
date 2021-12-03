@@ -194,8 +194,8 @@
             location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + exact_word + "&painter=" + painter;
         }
         function remove() {
-            var exact_word = document.getElementById("name").innerHTML;
-            var painter = document.getElementById("place").innerHTML;
+            var exact_word = document.getElementByTagName("h5")[1].innerHTML;
+            var painter = document.getElementByTagName("h6")[1].innerHTML;
             db.collection('손건우의 전시회').where('작품명','==',exact_word).get().then((결과) => {
                 결과.forEach((doc) => {
                     if(doc.data().작가명 ==  painter)
