@@ -56,13 +56,6 @@
                         </button>
                     </div>
                 </div>
-                <div>
-                    <h5 style="display: inline">인기태그</h5>
-                    <h5 style="display: inline">#꽃</h5>  
-                    <h5 style="display: inline">#스케치</h5> 
-                    <h5 style="display: inline">#밤</h5> 
-                    <h5 style="display: inline">#동물</h5>                   
-                </div>
             </div>
         </header>
 
@@ -193,7 +186,7 @@
         })
         
          db.collection('손건우의 전시회').doc('11').get().then((doc) => {
-                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">관리자</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+                $("#parent").append('<div class="col mb-5"><div class="card h-100"><a href="./손건우 전시회.html"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/></a><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">관리자의 전시회</h5><h6 id="place">관리자</h6><h6 id="place">#달리 #반 #피카소</h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
         }); 
 
     </script>
