@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- jquery링크 추가하기 -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a href="../template-home/HomePage.html">
+                <img src="assets/img/mainlogo.png" height="100" width="200" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="mainimage">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-lg" id="serch_word" placeholder="검색어를 입력해주세요"
+                        data-sb-validations="required,email" size=5 />
+                </div>
+
+                <div class="col-auto">
+                    <button class="btn btn-primary btn-lg" id="submitButton" onclick="reDirection()">
+                        검색
+                    </button>
+
+                    <script>
+                        function reDirection() {
+                            debugger;
+                            var input = document.getElementById('serch_word').value;
+                            location.href = "http://127.0.0.1:5500/template-검색result/index.html?keyword=" + input;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div id="parent" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3fkGkJ_AFSUTDkIvslynjHSYHqRszibQ",
+            authDomain: "artwork-5634a.firebaseapp.com",
+            databaseURL: "https://artwork-5634a-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "artwork-5634a",
+            storageBucket: "artwork-5634a.appspot.com",
+            messagingSenderId: "219664019648",
+            appId: "1:219664019648:web:70c162ce73f36d9913fd25",
+            measurementId: "G-1PND35QWHY"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+        
+        const db = firebase.firestore();
+
+        var search_word = parse_query_string(window.location.search.substring(1)).keyword;
+        console.log('test');
+        console.log(search_word);
+
+        db.collection('painting').where('작품명','>=',search_word).where('작품명','<=',search_word + '\uf8ff').get().then((결과) => {
+            console.log('결과');
+            결과.forEach((dic)=>console.log(dic.data()))
+            결과.forEach((doc) => {
+                $("#parent").append('<div class="col mb-5"><div class="card h-100"><img onclick="reDirectionPage()" class="card-img-top" src="'+doc.data().메인이미지+'" alt="..." width="450px" height="180px"/><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder" id="name">'+doc.data().작품명+'</h5><h6 id="place">'+doc.data().작가명+'</h6><a style="border: solid 1px;" class="btn btn-outline-dark mt-auto" href="#!" onclick="addDB();">Add to my exhibition</a></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"></div></div></div></div></div>');
+            })
+        });
+
+        function reDirectionPage() {
+            var exact_word = document.getElementById("name").innerHTML;
+            var painter = document.getElementById("place").innerHTML;
+            console.log(painter);
+            location.href = "http://127.0.0.1:5500/template-검색result/detailPage.html?keyword=" + exact_word + "&painter=" + painter;
+        }
+
+
+        function parse_query_string(query) {
+            var vars = query.split("&");
+            var query_string = {};
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                var key = decodeURIComponent(pair[0]);
+                var value = decodeURIComponent(pair[1]);
+                // If first entry with this name
+                if (typeof query_string[key] === "undefined") {
+                    query_string[key] = decodeURIComponent(value);
+                    // If second entry with this name
+                } else if (typeof query_string[key] === "string") {
+                    var arr = [query_string[key], decodeURIComponent(value)];
+                    query_string[key] = arr;
+                    // If third or later entry with this name
+                } else {
+                    query_string[key].push(decodeURIComponent(value));
+                }
+            }
+            return query_string;
+        }
+
+        function addDB() {
+            detail.get().then((결과) => {
+                결과.forEach((doc) => {
+                    if (doc.data().작가명 == painter) {
+                        db.collection('손건우의 전시회').doc().set({
+                            메인이미지: doc.data().메인이미지,
+                            부문: doc.data().부문,
+                            수집연도: doc.data().수집연도,
+                            작가명: doc.data().작가명,
+                            작품규격: doc.data().작품규격,
+                            작품명: doc.data().작품명,
+                            재료기법: doc.data().재료기법,
+                            제작년도: doc.data().제작년도
+                        })
+                    }
+                })
+            })
+            alert("Add Success!\n나만의 전시회에서 확인해주세요.");
+        }
+    </script>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">
+                Copyright &copy; Art Work 2021
+            </p>
+            <p class="m-0 text-center text-white">
+                Art Work : 신동준 손건우 김소영
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
